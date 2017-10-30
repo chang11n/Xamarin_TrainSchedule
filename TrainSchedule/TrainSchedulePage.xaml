@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:TrainSchedule" 
+    x:Class="TrainSchedule.TrainSchedulePage">
+    <ContentPage.Padding>
+    <OnPlatform x:TypeArguments ="Thinkness"
+            iOS="0,20,0,0"
+            Android="0"
+        />
+    </ContentPage.Padding>
+    <StackLayout BindingContext="{x:Reference slider1}" VerticalOptions="Center">
+        <Label x:Name="label1"
+            Text="{Binding Path=Value, StringFormat='Value is {0:F2}' }"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label x:Name="label2"
+            Text=" This is label 2"
+            Opacity="{Binding Path=Value}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Slider x:Name="slider1" Maximum="1"></Slider>
+    </StackLayout>
+</ContentPage>
+
